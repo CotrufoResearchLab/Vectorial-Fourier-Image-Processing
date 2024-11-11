@@ -2,7 +2,7 @@ function [OutputImages, X1D, Y1D, InputImage,TFs_Fitted,Kgrids_Fitted] = vfip(in
 %   INPUT ARGUMENTS
 %
 %   inputimage = NxM double
-%       Input Image to be processes.
+%       Input Image to be processed.
 %
 %   px_size = 1x2 double
 %       Specifies the physical size of the pixels of the input image, px_size = [px_size_x,px_size_y], in units of
