@@ -6,10 +6,17 @@ The script implements the mathematical steps outlined in [this](https://www.scie
 The typos have been annotated in [this](https://github.com/CotrufoResearchLab/Vectorial-Fourier-Image-Processing/blob/main/Paper/2024%20-%20Progress%20in%20Optics%20-%20Cotrufo%2C%20Alu%20-%20Metamaterials%20for%20analog%20all-optical%20computation.pdf) pdf file. 
 Make sure to open the file with Acrobat Reader to see the comments).
 
-See files in the ```Examples``` folder to learn how to use the script. See docstring in the file [vfip.m](https://github.com/CotrufoResearchLab/Vectorial-Fourier-Image-Processing/blob/main/vfip/vfip.m) for a description of the input and output parameters.
+## Installation
 
-If you wish to implement any change to the ```vfip.m``` file, make sure to run the tests inside the ```Test``` folder before submitting a Pull request.
+Just download the whole code, and place it anywhere on your computer. Then, make sure that the file ```vfip/vfip.m``` can be accessed by your script. See files in the ```Examples``` folder to see a possible way of doing this.
 
+## Usage
+
+See files in the ```Examples``` folder, and read the description of the input parameters and output variables, to learn how to use the script. 
+
+## Input Parameters and Output Variables
+
+See docstring in the file [vfip.m](https://github.com/CotrufoResearchLab/Vectorial-Fourier-Image-Processing/blob/main/vfip/vfip.m) for a description of the input parameters and output variables.
 ```
 %   INPUT ARGUMENTS
 %
@@ -75,4 +82,10 @@ If you wish to implement any change to the ```vfip.m``` file, make sure to run t
 %       the fourier transform of the input image 
 %
 ```
+
+## Tests
+
+If you wish to implement any change to the ```vfip.m``` file, make sure to run the tests inside the ```Test``` folder before submitting a Pull request.
+
+
 
