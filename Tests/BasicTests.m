@@ -1,6 +1,9 @@
     
 %% This script performs a series of sanity checks by considering trivial scenarios for input images and/or transfer functions, 
-% and checking that the output image is the expected one
+% and checking that the output image is the expected one. 
+% Just run this file and check that all tests return "Test OK" in the
+% commant line
+
 
 function BasicTests()
 
@@ -12,6 +15,8 @@ function BasicTests()
     tol1 = 1e-3;
     
     
+    Counter_tests_passed = 0;
+    Counter_tests_not_passed = 0;
     %% Create Flat Image
     Nx = 100;
     Ny = 100;
@@ -300,8 +305,13 @@ end
 function TestResult(Test,Result)
     if Result
         disp('Test OK')
+        Counter_tests_passed = Counter_tests_passed + 1;
     else
         disp('Test not Passed')
+        Counter_tests_not_passed = Counter_tests_not_passed + 1;
     end
 end
+
+disp(['Tests passed: ',num2str(Counter_tests_passed),'/',num2str(Counter_tests_passed + Counter_tests_not_passed)])
+disp(['Tests NOT passed: ',num2str(Counter_tests_not_passed),'/',num2str(Counter_tests_passed + Counter_tests_not_passed)])
 end
