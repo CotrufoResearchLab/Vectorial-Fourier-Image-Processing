@@ -5,7 +5,7 @@
 function BasicTests()
 
     clear all; close all;
-    addpath('./vflip/')
+    addpath('../vfip/')
     
     MakeIntermediatePlots = false;
     

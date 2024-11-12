@@ -11,7 +11,7 @@ function [OutputImages, X1D, Y1D, InputImage,TFs_Fitted,Kgrids_Fitted] = vfip(in
 %   inputpol = 2xNpol double
 %       Normalized vector describing the polarization(s) of the input image(s). If Npol=1, only one input image, with 
 %       polarization given by inputpol(:,1), is assumed. If Npol>1, the script will repeat the image procssing calculation Npol times, 
-#       each time assuming an image with the same shape (given by inputimage) and with polarization vector equal to inputpol(:,j). Accordingly,
+%       each time assuming an image with the same shape (given by inputimage) and with polarization vector equal to inputpol(:,j). Accordingly,
 %       multiple output images will be returned. If the polarization vector is not normalized, the script normalizes it.
 %
 %   TFs = 1x4 cell array. 
