@@ -9,20 +9,19 @@ function [OutputImages, X1D, Y1D, InputImage,TFs_Fitted,Kgrids_Fitted] = vfip(in
 %       wavelength. 
 %
 %   inputpol = 2xNpol double
-%       Normalized vector describing the polarization(s) of the input image(s). if Npol=1, only one input image (with a
-%       certain polarization) is assumed. If Npol>1 the scripts will repeata the calculations N times, each time assuming
-%       an image with a shape given by inputimage and with polarization vector equal to inputpol(:,j). Accordingly,
-%       multiple output images will be returned
-%       If the polarization vector is not normalized, the script normalizes it
+%       Normalized vector describing the polarization(s) of the input image(s). If Npol=1, only one input image, with 
+%       polarization given by inputpol(:,1), is assumed. If Npol>1, the script will repeat the image procssing calculation Npol times, 
+#       each time assuming an image with the same shape (given by inputimage) and with polarization vector equal to inputpol(:,j). Accordingly,
+%       multiple output images will be returned. If the polarization vector is not normalized, the script normalizes it.
 %
 %   TFs = 1x4 cell array. 
 %       The four complex transfer functions, TFs = {tss,tpp,tsp,tps}. Each transfer function is a rectangular matrix.
 %       The four matrices must have the same size. The size of these matrices does not need to match the size of
-%       inputimage
+%       inputimage.
 %
 %   Kgrids = 1x2 cell array
-%       The meshgrids KX and KY associated to the transfer functions, Kgrids = {KX,KY}. KX and KY are meshgrids with the
-%       same size as the transfer functions
+%       The meshgrids KX and KY associated to the transfer functions, Kgrids = {KX,KY}. KX and KY are meshgrids and must have the
+%       same size as the transfer functions.
 %
 %   DefaultValueTFs = 1x4 double (optional). Default value = [0,0,0,0]
 %       If the k-space range over which the transfer functions are defined is smaller than the k-space range of the
@@ -30,37 +29,37 @@ function [OutputImages, X1D, Y1D, InputImage,TFs_Fitted,Kgrids_Fitted] = vfip(in
 %       the transfer functions have a value equal to the one specified in the array DefaultValueTFs, following the 
 %       order DefaultValueTFs = [tss,tpp,tsp,tps]
 %       
-%
 %   MakeIntermediatePlots = boolean (optional). Default value = False
+%       When set to true, the script genereates intermediate plots.
 %
 %   FigHandles = 1x6 double (optional)
-%       If MakeIntermediatePlots == True, then FigHandles will contain the handles of the figure objects that will be
-%       used for the intermediate plots
+%       If MakeIntermediatePlots == True, then FigHandles will contain the numerical handles of the figure objects that will be
+%       used for the intermediate plots. For example, you can set FigHandles = [1,2,3,4,5,6].
 
 %   OUTPUT ARGUMENTS
 %
 %   OutputImages = Npolx2 cell array, each cell containing an NxM double matrix
-%       OutputImages{i,1} (with 1<=i<=Npol) is the Ex component of the output image when the input image has
-%       polarization given by inputpol(2,i)
-%       OutputImages{i,2} (with 1<=i<=Npol) is the Ey component of the output image when the input image has
-%       polarization given by inputpol(2,i)
+%       OutputImages{j,1} (with 1<=j<=Npol) is the Ex component of the output image when the input image has
+%       polarization given by inputpol(:,j)
+%       OutputImages{j,2} (with 1<=j<=Npol) is the Ey component of the output image when the input image has
+%       polarization given by inputpol(:,j)
 %
 %   X1D = 1xM double
-%       x coordinates of the pixels in the input/output images
+%       x coordinates of the pixels in the input/output images.
 %
 %   Y1D = 1xM double
-%       y coordinates of the pixels in the input/output images
+%       y coordinates of the pixels in the input/output images.
 %
 %   InputImage = NxM double
-%       Input image
+%       Input image.
 %
 %   TFs_Fitted = 1x4 cell array
 %       The four complex transfer functions, TFs_Fitted = {tss,tpp,tsp,tps}, but fitted on the SAME range of k vectors defined by
-%       the fourier transform of the input image 
+%       the fourier transform of the input image. These are the transfer functions that are actually used by the script to calculate the Fourier filtering.
 % 
 %   Kgrids_Fitted = 1x2 cell array
 %       The meshgrids KX and KY associated to the transfer functions, Kgrids_Fitted = {KX,KY}, but fitted on the SAME range of k vectors defined by
-%       the fourier transform of the input image 
+%       the fourier transform of the input image.
 %
 
 arguments
