@@ -1,10 +1,7 @@
 # Vectorial Fourier Image Processing (vfip)
 A Matlab script to calculate the filtering/processing performed on an optical image by an optical element (such as a thin metasurface) characterized by angle-dependent vectorial transfer functions.
 
-The script implements the mathematical steps outlined in [this](https://www.sciencedirect.com/science/article/pii/S0079663824000027) paper 
-(Note: there are a couple of typos in the equations in the published paper. 
-The typos have been annotated in [this](https://github.com/CotrufoResearchLab/Vectorial-Fourier-Image-Processing/blob/main/Paper/2024%20-%20Progress%20in%20Optics%20-%20Cotrufo%2C%20Alu%20-%20Metamaterials%20for%20analog%20all-optical%20computation.pdf) pdf file. 
-Make sure to open the file with Acrobat Reader to see the comments).
+The script implements the mathematical steps outlined in Eqs. 1-7 of [this](https://www.sciencedirect.com/science/article/pii/S0079663824000027) paper from our group.
 
 ## Installation
 
