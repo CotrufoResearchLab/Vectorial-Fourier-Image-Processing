@@ -1,7 +1,7 @@
 %% ANISOTROPIC EDGE DETECTION (only tpp is different than zero, see also https://doi.org/10.1364/OPTICA.500121)
 
 clear all; close all;
-addpath('../vflip/')
+addpath('../vfip/')
 
 %% General Settings
 

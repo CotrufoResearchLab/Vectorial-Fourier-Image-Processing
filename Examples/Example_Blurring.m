@@ -1,7 +1,7 @@
 %% Blurring
 
 clear all; close all;
-addpath('../vflip/')
+addpath('../vfip/')
 
 %% General Settings
 

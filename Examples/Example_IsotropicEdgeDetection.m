@@ -1,9 +1,9 @@
 %% ISOTROPIC EDGE DETECTION
 
 clear all; close all;
-addpath('../vflip/')
+addpath('../vfip/')
 
-%% General Settings
+%% General ettings
 
 NA_image = 0.5;
 NA_TF = 0.4;
