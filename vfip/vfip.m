@@ -73,7 +73,7 @@ arguments
     FigHandles (1,6) double = [1,2,3,4,5,6];
 end
 
-version = '0.1_20241110';
+version = '0.2_20241117';
 disp(['vfip version = ',version])
 
 [~,Npol] = size(inputpol);
@@ -408,7 +408,7 @@ for j = 1:Npol
         colormap(gray);
         xlabel('x [\lambda]')
         ylabel('y [\lambda]')
-        title(['After filter, |Ej|^2, InputPol = #',num2str(j)])
+        title(['After filter, |Ey|^2, InputPol = #',num2str(j)])
         colorbar
     end
 
